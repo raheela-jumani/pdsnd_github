@@ -121,8 +121,7 @@ def station_stats(df, _city, _month, _day):
     print("Most popular start station: {}, Count: {}, Filterred by City: {}, Month: {}, Day: {}".format(popular_start_station, popular_start_station_count,  _city.title(), _month.title(), _day.title()))
     
     # TO DO: display most commonly used end station
-    popular_end_station = df['End Station'].mode()[0]
-    popular_end_station_count = df.loc[df['End Station'] == popular_end_station, 'End Station'].count()
+    popular_end_station_count = df.loc[df['End Station'] == df['End Station'].mode()[0], 'End Station'].count()
     print("\nMost popular end station is: {}, Count: {}, Filterred by City: {}, Month: {}, Day: {}".format(popular_end_station, popular_end_station_count,  _city.title(), _month.title(), _day.title()))
 
     # TO DO: display most frequent combination of start station and end station trip
